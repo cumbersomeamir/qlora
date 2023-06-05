@@ -23,7 +23,7 @@ model = AutoModelForCausalLM.from_pretrained(model_id, quantization_config = bnb
 
 #Enabling Gradient Checkpointing
 model.gradient_checkpointing_enable()
-model = prepare_model_for_kbit_traning(model)
+model = prepare_model_for_kbit_training(model)
 
 #Printing the Total Number of trainable parameters
 def print_trainable_parameters(model):
@@ -66,7 +66,7 @@ trainer = transformers.Trainer(
     model = model,
     train_dataset = data["train"],
     args = transformers.TrainingArguments(
-        per_device_batch_size =1,
+        per_device_train_batch_size =1,
         gradient_accumulation_steps= 4,
         warmup_steps = 2,
         max_steps = 10,
@@ -74,9 +74,9 @@ trainer = transformers.Trainer(
         fp16 = True,
         logging_steps = 1,
         output_dir = "outputs",
-        optim = "page_adamw_8bit"
+        optim = "paged_adamw_8bit"
     ),
-    data_collator = transformers.DataCollatorForLanguageModelling(tokenizer, mlm = False)
+    data_collator = transformers.DataCollatorForLanguageModeling(tokenizer, mlm = False)
     )
 #Use cache or not
 model.config.use_cache = False
