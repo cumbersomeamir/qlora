@@ -51,14 +51,15 @@ config = LoraConfig(r = 8,
 model = get_peft_model(model, config)
 #Calling the print trainable parameters function
 print_trainable_parameters(model)
+#Adding the pad token 
+tokenizer.pad_token = tokenizer.eos_token
 
 #Loading the Dataset
 data = load_dataset("Amirkid/jokes")
 data = data.map(lambda samples : tokenizer(samples["text"]), batched = True)
 
 
-#Adding the pad token 
-tokenizer.pad_token = tokenizer.eos_token
+
 
 #Initialising the Trainer
 trainer = transformers.Trainer(
