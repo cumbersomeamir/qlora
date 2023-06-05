@@ -9,7 +9,7 @@ from peft import PeftModel, PeftConfig
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 os.environ["CUDA_VISIBLE_DEVICES"]="0"
-peft_model_id = "Amirkid/LlamaJokeGenerator"
+peft_model_id = "Amirkid/Qlora"
 config = PeftConfig.from_pretrained(peft_model_id)
 model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path, return_dict=True, load_in_4bit=True, device_map='auto')
 tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path)
