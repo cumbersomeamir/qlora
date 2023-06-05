@@ -83,7 +83,9 @@ model.config.use_cache = False
 #Training the model
 trainer.train()
 #Saving the model
-trainer.save_model("Qlora finetuned")
-model1 = AutoModelForCausalLM.from_pretrained("Qlora finetuned")
+#trainer.save_model("Qlora finetuned")
+
+#model1 = AutoModelForCausalLM.from_pretrained("Qlora finetuned")
+model.save_pretrained("Qlora")
 token = "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"
-model1.push_to_hub("Amirkid/Qlora", use_auth_token = token)
+model.push_to_hub("Amirkid/Qlora", use_auth_token = token)
