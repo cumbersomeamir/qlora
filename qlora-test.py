@@ -1,4 +1,5 @@
-#pip3 install -q -U bitandbytes datasets git+https://github.com/huggingface/accelerate.git git+https://github.com/huggingface/peft.git git+https://github.com/huggingface/transformers.git 
+#pip3 install -U bitandbytes datasets 
+#pip3 install -U git+https://github.com/huggingface/accelerate.git git+https://github.com/huggingface/peft.git git+https://github.com/huggingface/transformers.git 
 
 
 #Importing the relevant Libraries
