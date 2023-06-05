@@ -1,4 +1,4 @@
-#pip3 install -U bitandbytes datasets scikit-learn
+#pip3 install -U bitsandbytes datasets scikit-learn
 #pip3 install -U git+https://github.com/huggingface/accelerate.git git+https://github.com/huggingface/peft.git git+https://github.com/huggingface/transformers.git 
 
 
