@@ -11,7 +11,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 os.environ["CUDA_VISIBLE_DEVICES"]="0"
 peft_model_id = "Amirkid/LlamaJokeGenerator"
 config = PeftConfig.from_pretrained(peft_model_id)
-model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path, return_dict=True, load_in_8bit=True, device_map='auto')
+model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path, return_dict=True, load_in_4bit=True, device_map='auto')
 tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path)
 
 # Load the Lora model
