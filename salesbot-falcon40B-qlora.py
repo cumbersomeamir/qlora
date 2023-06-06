@@ -41,6 +41,7 @@ def print_trainable_parameters(model):
 #Defining the Lora Config
 config = LoraConfig(r = 8,
                     lora_alpha = 32,
+                    target_modules = ['query_key_value'],
                     lora_dropout = 0.05,
                     bias = "none",
                     task_type = "CAUSAL_LM"
