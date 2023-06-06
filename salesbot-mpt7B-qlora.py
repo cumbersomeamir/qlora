@@ -1,4 +1,4 @@
-#pip3 install -U bitsandbytes datasets scikit-learn git+https://github.com/huggingface/accelerate.git git+https://github.com/huggingface/peft.git git+https://github.com/huggingface/transformers.git 
+#pip3 install -U bitsandbytes datasets scikit-learn einops git+https://github.com/huggingface/accelerate.git git+https://github.com/huggingface/peft.git git+https://github.com/huggingface/transformers.git 
 
 
 #Importing the relevant Libraries
