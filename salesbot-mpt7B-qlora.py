@@ -21,7 +21,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(model_id, quantization_config = bnb_config, device_map = {"": 0}, trust_remote_code=True)
 
 #Enabling Gradient Checkpointing
-model.gradient_checkpointing_enable()
+#model.gradient_checkpointing_enable()
 model = prepare_model_for_kbit_training(model)
 
 #Printing the Total Number of trainable parameters
