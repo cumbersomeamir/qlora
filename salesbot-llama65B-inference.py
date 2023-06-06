@@ -68,7 +68,7 @@ trainer = transformers.Trainer(
         per_device_train_batch_size =32,
         gradient_accumulation_steps= 4,
         warmup_steps = 0,
-        max_steps = 100,
+        max_steps = 15,
         learning_rate = 1e-4,
         fp16 = True,
         logging_steps = 1,
@@ -83,8 +83,10 @@ model.config.use_cache = False
 trainer.train()
 #Saving the model
 #trainer.save_model("Qlora finetuned")
+username = "Amirkid"
+model_name = "Salesbot-llama65B-Qlora"
 
 #model1 = AutoModelForCausalLM.from_pretrained("Qlora finetuned")
-model.save_pretrained("spotify-Qlora-llama65B")
+model.save_pretrained(f"{username}/{model_name}")
 token = "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"
 model.push_to_hub("Amirkid/spotify-llama65B-Qlora", use_auth_token = token)
