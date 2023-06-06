@@ -28,6 +28,7 @@ while True:
     batch = tokenizer(user_input, return_tensors='pt')
 
     with torch.cuda.amp.autocast():
-        output_tokens = model.generate(**batch, max_new_tokens=100)
+        output_tokens = model.generate(input_ids=batch['input_ids'], attention_mask=batch['attention_mask'], max_new_tokens=100)
+
 
     print('\n\n', tokenizer.decode(output_tokens[0], skip_special_tokens=True))
