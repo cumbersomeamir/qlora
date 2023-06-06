@@ -1,5 +1,5 @@
 
-#pip3 install -U bitsandbytes scikit-learn git+https://github.com/huggingface/transformers.git git+https://github.com/huggingface/accelerate.git git+https://github.com/huggingface/peft.git
+#pip3 install -U einops bitsandbytes scikit-learn git+https://github.com/huggingface/transformers.git git+https://github.com/huggingface/accelerate.git git+https://github.com/huggingface/peft.git
 
 import os
 import bitsandbytes as bnb
