@@ -90,4 +90,4 @@ model_name = "stanford_alpaca-falcon40B-Qlora"
 #model1 = AutoModelForCausalLM.from_pretrained("Qlora finetuned")
 model.save_pretrained(f"{username}/{model_name}")
 token = "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"
-model.push_to_hub("Amirkid/stanford_alpaca-falcon40B-Qlora", use_auth_token = token)
+model.push_to_hub("Amirkid/stanford_alpaca-falcon40B-qlora-200steps", use_auth_token = token)
