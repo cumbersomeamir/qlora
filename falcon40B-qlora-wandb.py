@@ -79,7 +79,7 @@ trainer = transformers.Trainer(
         fp16 = True,
         logging_steps = 1,
         output_dir = "outputs",
-        optim = "paged_adamw_8bit"
+        optim = "paged_adamw_8bit",
         report_to = 'wandb'
     ),
     data_collator = transformers.DataCollatorForLanguageModeling(tokenizer, mlm = False)
