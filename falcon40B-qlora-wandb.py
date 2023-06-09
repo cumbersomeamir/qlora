@@ -60,7 +60,7 @@ print_trainable_parameters(model)
 tokenizer.pad_token = tokenizer.eos_token
 
 #Loading the Dataset
-data = load_dataset("Amirkid/Salesbot")
+data = load_dataset("Amirkid/stanford_alpaca_new")
 data = data.map(lambda samples : tokenizer(samples["text"]), batched = True)
 
 
@@ -96,4 +96,4 @@ model_name = "stanford_alpaca-falcon40B-Qlora"
 #model1 = AutoModelForCausalLM.from_pretrained("Qlora finetuned")
 model.save_pretrained(f"{username}/{model_name}")
 token = "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"
-model.push_to_hub("Amirkid/stanford_alpaca-falcon40B-qlora-200steps", use_auth_token = token)
+model.push_to_hub("Amirkid/stanford_alpaca-falcon40B-qlora-200steps-new", use_auth_token = token)
