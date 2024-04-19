@@ -29,7 +29,6 @@ def print_trainable_parameters(model):
 
   trainable_params = 0 
   all_param = 0
-
   for _, param in model.named_parameters():
     all_param += param.numel()
     if param.requires_grad:
